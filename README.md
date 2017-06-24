@@ -1,7 +1,7 @@
 <h1 align="center">
 	<br><img src="logo.jpg" alt="logo"><br>
 
-	DevOps-Java
+	DevOps-DotNet
 </h1>
 
 
