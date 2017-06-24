@@ -1,0 +1,32 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+#
+#
+# Vagrantfile - Servers' infrastructure for DotNet core.
+#
+#
+# Author: 	Rodrigo Alvares de Souza
+# 			rsouza01@gmail.com
+#
+#
+# History:
+# Version 0.1: 2017/06/24 (rsouza) - First version.
+#
+#
+#
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+	config.librarian_puppet.puppetfile_dir = "librarian"
+
+	config.vm.box = "hashicorp/precise32"
+
+	if Vagrant.has_plugin?("vagrant-librarian-puppet")
+		config.librarian_puppet.puppetfile_dir = "librarian"
+	end
+
+
+end
+
