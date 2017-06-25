@@ -27,6 +27,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		config.librarian_puppet.puppetfile_dir = "librarian"
 	end
 
+	config.vm.define :web_dotnet do |web_config|
+		web_config.vm.hostname = "webdotnet"
+		web_config.vm.network :private_network, :ip => "192.168.33.100"
+
+		web_config.vm.provision "puppet" do |puppet|
+			puppet.manifest_file = "web_dotnet.pp"
+		end		
+	end
 
 end
 
